@@ -23,6 +23,8 @@ At a given interval, the application get the list of preemptible nodes and check
 
 ### Usage
 
+#####Before apply, please enable `Cloud Resource Manager API`
+
 ##### Examples:
  ```shell script
 module "preemtible-killer" {
