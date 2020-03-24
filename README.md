@@ -16,10 +16,12 @@ At a given interval, the application get the list of preemptible nodes and check
 * This tool increases the chances to have many small disruptions instead of one major disruption.
 * This tool does not guarantee that major disruption is avoided - GCP can trigger large disruption because the way preemptible instances are managed. Ensure your have PDB and enough of replicas, so for better safety just use non-preemptible nodes in different zones. You may also be interested in estafette-gke-node-pool-shifter.
 
+
+
 ### Terraform providers:
 * google (v 3.12.0)
 * kubernetes (v 1.11.1)
-* helm (v 1.0.0)
+* helm (v 1.1.0)
 
 ### Usage
 
