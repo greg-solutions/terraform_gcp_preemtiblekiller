@@ -2,3 +2,6 @@
 **/credentials
 .idea
 .terraform
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
