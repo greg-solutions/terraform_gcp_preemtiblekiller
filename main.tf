@@ -18,6 +18,7 @@ resource "google_project_iam_binding" "role_to_project" {
 resource "google_service_account_key" "key" {
   service_account_id = google_service_account.service-account.name
   private_key_type    = "TYPE_GOOGLE_CREDENTIALS_FILE"
+  depends_on = [google_project_iam_binding.role_to_project]
 }
 
 resource "kubernetes_namespace" "namespace" {
