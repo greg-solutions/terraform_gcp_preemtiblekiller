@@ -13,6 +13,8 @@ resource "google_project_iam_custom_role" "iam-role" {
 resource "google_project_iam_binding" "role_to_project" {
   members = ["serviceAccount:${google_service_account.service-account.email}",]
   role = google_project_iam_custom_role.iam-role.id
+
+  depends_on = [google_service_account.service-account, google_project_iam_custom_role.iam-role]
 }
 
 resource "google_service_account_key" "key" {
@@ -70,4 +72,6 @@ resource "helm_release" "application" {
     name = "secret.googleServiceAccountKeyfileJson"
     value = google_service_account_key.key.private_key
   }
+
+  depends_on = [kubernetes_namespace.namespace, google_service_account.service-account]
 }
