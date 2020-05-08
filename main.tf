@@ -34,7 +34,7 @@ resource "kubernetes_namespace" "namespace" {
 
 resource "helm_release" "application" {
   chart = local.helm_chart
-  repository = data.helm_repository.estafette.metadata[0].name
+  repository = local.helm_repo_name
   name = local.helm_chart
   namespace = kubernetes_namespace.namespace.id
   recreate_pods = true
