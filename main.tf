@@ -34,7 +34,7 @@ resource "kubernetes_namespace" "namespace" {
 
 resource "helm_release" "application" {
   chart = local.helm_chart
-  repository = local.helm_repo_name
+  repository = local.helm_repo_url
   name = local.helm_chart
   namespace = kubernetes_namespace.namespace.id
   recreate_pods = true
@@ -57,8 +57,8 @@ resource "helm_release" "application" {
     }
   }
   set {
-  name = "drainTimeout"
-  value = var.drain_timeout
+    name = "drainTimeout"
+    value = var.drain_timeout
   }
   set {
     name = "interval"

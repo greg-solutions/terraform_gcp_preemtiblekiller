@@ -1,6 +1,7 @@
 locals {
   name = "preemptible-killer"
   name_id = "preemptible_killer"
+  helm_repo_url = "https://helm.estafette.io"
   helm_repo_name = "estafette"
   helm_chart = "estafette-gke-preemptible-killer"
   helm_template_version = "1.2.5"

@@ -19,9 +19,9 @@ At a given interval, the application get the list of preemptible nodes and check
 
 
 ### Terraform providers:
-* google (v 3.19.0)
-* kubernetes (v 1.11.1)
-* helm (v 1.1.1)
+* google >= (v 3.19.0)
+* kubernetes => (v 1.11.1)
+* helm => (v 1.1.1)
 
 ### Usage
 
