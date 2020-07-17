@@ -27,3 +27,8 @@ variable "interval_checks" {
   description = "(Optional) Time in second to wait between each node check"
   default = "600"
 }
+
+variable "additional_set" {
+  description = "Add additional set for helm"
+  default = []
+}

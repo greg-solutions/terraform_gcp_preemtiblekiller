@@ -73,5 +73,14 @@ resource "helm_release" "application" {
     value = google_service_account_key.key.private_key
   }
 
+  dynamic "set" {
+    for_each = var.additional_set
+    content {
+      name = set.value.name
+      value = set.value.value
+      type = lookup(set.value, "type", null )
+    }
+  }
+
   depends_on = [kubernetes_namespace.namespace, google_service_account.service-account]
 }
