@@ -1,3 +1,6 @@
+# DEPRECATED MOVED TO (https://github.com/terraform-iaac/terraform-gcp-preemtible-killer)
+
+
 ##GKE Preemtible Killer
 Source: https://github.com/estafette/estafette-gke-preemptible-killer.git
 
